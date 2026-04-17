@@ -1,16 +1,14 @@
 namespace Slutprojekt;
 
-public class Jinx:Villain
-{ // koden för skurken jinx  
-    public Jinx()
+public class Ambessa : Villain
+{
+    public Ambessa()
     {
-        Namev = "Jinx";
+        Namev = "Ambessa";
         vhp = 400;
-        (vhp, kr) = Jinxuppgrade(kr, vhp); 
-      
+        (vhp,kr)=Ambessauppgrade(vhp,kr); 
     }
-        // uppgraderings metoden för Jinx Hit points
-       public static (int, int) Jinxuppgrade(int kr, int vhp)
+    public static (int, int) Ambessauppgrade(int kr, int vhp)
     {
         kr = 500;
         Console.WriteLine("Välj vilken uppgradering");
@@ -51,5 +49,5 @@ public class Jinx:Villain
 
         return (kr, vhp);
     }
-        
+    
 }

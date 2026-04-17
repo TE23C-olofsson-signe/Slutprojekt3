@@ -1,4 +1,4 @@
-using System;
+
 
 namespace Slutprojekt;
 
@@ -13,7 +13,7 @@ public class Fightandhero
     protected int kr = 500; 
 
     // Koden för attacken kan ändras i subklasser. 
-    protected void attack(Villain target)
+    protected void Attack(Villain target)
     {
         Console.WriteLine($"{Name} attackerar {target.Namev} Med sitt vapen{weapon}");
 
