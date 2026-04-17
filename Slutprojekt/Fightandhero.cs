@@ -15,7 +15,7 @@ public class Fightandhero
     // Koden för attacken kan ändras i subklasser. 
     protected void Attack(Villain target)
     {
-        Console.WriteLine($"{Name} attackerar {target.Namev} Med sitt vapen{weapon}");
+        Console.WriteLine($"{Name} attackerar {target.villainname} Med sitt vapen{weapon}");
 
         while (target.vhp > 0)
         {

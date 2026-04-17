@@ -1,8 +1,9 @@
 // All kod för villain 
 namespace Slutprojekt;
 
-public class Villain : Fightandhero
+public class Villain
 {
-    public string Namev;
-    public int vhp;
+    public string villainname;
+    public int villainhp;
+  protected  int money = 500; 
 }

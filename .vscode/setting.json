@@ -1,0 +1,7 @@
+{
+  "csharp.referencesCodeLens.enabled": false,
+  "csharp.debug.console": "externalTerminal",
+  "explorer.compactFolders": false,
+  "explorer.sortOrderLexicographicOptions": "unicode",
+  "git.postCommitCommand": "push"
+}
