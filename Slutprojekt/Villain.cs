@@ -3,7 +3,7 @@ namespace Slutprojekt;
 
 public class Villain
 {
-    public string villainname;
-    public int villainhp;
-  protected  int money = 500; 
+    public string VillainName;
+    public int VillainHp;
+  protected  int Money = 500; 
 }

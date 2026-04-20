@@ -7,44 +7,44 @@ public class Fightandhero
 {
     // Stringar och intar som alla kan ändra på  och 
     public string Name; 
-    public string weapon; 
-    public int weaponHp; 
+    public string Weaponname; 
+    public int WeaponHp; 
     protected string SaveName;
-    protected int kr = 500; 
+    protected int Money = 500; 
 
     // Koden för attacken kan ändras i subklasser. 
     protected void Attack(Villain target)
     {
-        Console.WriteLine($"{Name} attackerar {target.villainname} Med sitt vapen{weapon}");
+        Console.WriteLine($"{Name} attackerar {target.VillainName} Med sitt vapen{Weaponname}");
 
-        while (target.vhp > 0)
+        while (target.VillainHp > 0)
         {
-            Console.WriteLine($"\n------=====Slå {target.Namev}=====------");
-            Console.WriteLine($"{Name}:{weapon}:{weaponHp}:{target.Namev}:{target.vhp}\n");
+            Console.WriteLine($"\n------=====Slå {target.VillainName}=====------");
+            Console.WriteLine($"{Name}:{Weaponname}:{WeaponHp}:{target.VillainName}:{target.VillainHp}\n");
 
-            int weapondamage = weaponHp;
-            target.vhp -= weapondamage;
-            target.vhp = Math.Max(0, target.vhp);
+            int weapondamage = WeaponHp;
+            target.VillainHp -= weapondamage;
+            target.VillainHp = Math.Max(0, target.VillainHp);
 
-            Console.WriteLine($"{weapon} gör {weapondamage} på {target.vhp}");
+            Console.WriteLine($"{Weaponname} gör {weapondamage} på {target.VillainHp}");
             Console.ReadKey();
         }
-        Console.WriteLine($"Yay du slog{target.Namev}");
+        Console.WriteLine($"Yay du slog{target.VillainName}");
     }
     //kode för saveattack. 
     protected void saveattack(Villain target)
     {
-        Console.WriteLine($"{Name} attackerar {target.Namev} Med sitt vapen{weapon}");
-        while (target.vhp>0)
+        Console.WriteLine($"{Name} attackerar {target.VillainName} Med sitt vapen{Weaponname}");
+        while (target.VillainHp>0)
         {
             Console.WriteLine($"\n------=====Rädda {SaveName}=====------");
-            Console.WriteLine($"{Name}:{weapon}:{weaponHp}:{target.Namev}:{target.vhp}\n");
+            Console.WriteLine($"{Name}:{Weaponname}:{WeaponHp}:{target.VillainName}:{target.VillainHp}\n");
 
-            int weaponDamage= weaponHp; 
-            target.vhp-= weaponDamage;
-            target.vhp = Math.Max(0, target.vhp); 
+            int weaponDamage= WeaponHp; 
+            target.VillainHp-= weaponDamage;
+            target.VillainHp = Math.Max(0, target.VillainHp); 
 
-            Console.WriteLine($"{weapon} gör {weaponDamage} på {target.vhp}");
+            Console.WriteLine($"{Weaponname} gör {weaponDamage} på {target.VillainHp}");
             Console.ReadKey();
         }
         Console.WriteLine($"YAy du räddade{SaveName}");

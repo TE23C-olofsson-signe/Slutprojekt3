@@ -1,3 +1,5 @@
+using System.Threading.Tasks;
+
 namespace Slutprojekt;
 
 public class Vi : Fightandhero
@@ -5,30 +7,59 @@ public class Vi : Fightandhero
     public Vi()
     {
         Name = "Vi";
-        weaponHp = 100;
-        weapon = "Atlas gloves";
+        WeaponHp = 100;
+        Weaponname = "Atlas gloves";
+        (Money, WeaponHp) = Viuppgrade(Money, WeaponHp); 
     }
-
-    static (int, int) Viuppgrade(int kr, int weaponHp)
+    
+    // köp av Hp uppgradering. 
+    static(int, int) Viuppgrade(int Money, int Hp)
     {
-        kr = 600;
+        Console.WriteLine($"Du har så här{Money} mycke pengar ");
 
-        Console.WriteLine("1. uppgrade hp (5)");
-        Console.WriteLine("2. uppgrade hp (10)");
-        Console.WriteLine("3. uppgrade hp (3)");
+        Console.WriteLine("1. uppgradera hp (5) 300kr"); 
+        Console.WriteLine("2. uppgradera hp (10) 600kr");
+        Console.WriteLine("3. uppgradera hp (3) 100kr");
 
-        string uppgradering = "";
-        int finalprice=0;
+        string uppgrade = "";
+        int finalprice = 0;
 
-        while (uppgradering != "1" && uppgradering != "2" && uppgradering != "3")
+        // Loopen körs till någon  av kraven uppfylls: 
+        while (uppgrade != "1" && uppgrade != "2" && uppgrade != "3")
         {
-            uppgradering = Console.ReadLine(); 
-            
+            uppgrade = Console.ReadLine();
+
+            // Antal uppgraderingar. 
             Console.WriteLine("Okej hur många ?");
+            string howmany = Console.ReadLine();
+            int p = 0;
+            int.TryParse(howmany, out p);
+
+
+
+            if (uppgrade == "1")
+            {
+                finalprice = p * 300;
+                Hp *= 5;
+            }
+            else if (uppgrade == "2")
+            {
+                finalprice = p * 600;
+            }
+            else if (uppgrade == "3")
+            {
+                finalprice = p * 100; 
+            }
+
+            if (finalprice < Money)
+            {
+                Console.WriteLine($"du har inte råd med {p} uppgraderingar");
+            }
+            
         }
 
-        
-        return (kr, weaponHp); 
+
+        return (Money, Hp);
     }
 
 }
