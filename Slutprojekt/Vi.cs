@@ -7,19 +7,19 @@ public class Vi : Fightandhero
     public Vi()
     {
         Name = "Vi";
-        WeaponHp = 100;
+        WeaponHp =90;
         Weaponname = "Atlas gloves";
-        (Money, WeaponHp) = Viuppgrade(Money, WeaponHp); 
+        SaveName= "Littleman"; 
     }
-    
+
     // köp av Hp uppgradering. 
-    static(int, int) Viuppgrade(int Money, int Hp)
+    public override void Upgrade(int Money, int Hp)
     {
         Console.WriteLine($"Du har så här{Money} mycke pengar ");
 
-        Console.WriteLine("1. uppgradera hp (5) 300kr"); 
+        Console.WriteLine("1. uppgradera hp (2) 300kr");
         Console.WriteLine("2. uppgradera hp (10) 600kr");
-        Console.WriteLine("3. uppgradera hp (3) 100kr");
+        Console.WriteLine("3. uppgradera hp (5) 100kr");
 
         string uppgrade = "";
         int finalprice = 0;
@@ -48,18 +48,18 @@ public class Vi : Fightandhero
             }
             else if (uppgrade == "3")
             {
-                finalprice = p * 100; 
+                finalprice = p * 100;
             }
 
-            if (finalprice < Money)
+            if (finalprice > Money)
             {
                 Console.WriteLine($"du har inte råd med {p} uppgraderingar");
             }
-            
+
         }
 
-
-        return (Money, Hp);
+        Money -= finalprice; 
+        
     }
 
 }

@@ -2,15 +2,16 @@
 
 namespace Slutprojekt;
 
-    // Klassen för Hjälten och Bråket 
+// Klassen för Hjälten och Bråket 
 public class Fightandhero
 {
     // Stringar och intar som alla kan ändra på  och 
-    public string Name; 
-    public string Weaponname; 
-    public int WeaponHp; 
+    public string Name;
+    public string Weaponname;
+    public int WeaponHp;
     protected string SaveName;
-    protected int Money = 500; 
+    protected int Money = 500;
+
 
     // Koden för attacken kan ändras i subklasser. 
     protected void Attack(Villain target)
@@ -35,18 +36,23 @@ public class Fightandhero
     protected void saveattack(Villain target)
     {
         Console.WriteLine($"{Name} attackerar {target.VillainName} Med sitt vapen{Weaponname}");
-        while (target.VillainHp>0)
+        while (target.VillainHp > 0)
         {
             Console.WriteLine($"\n------=====Rädda {SaveName}=====------");
             Console.WriteLine($"{Name}:{Weaponname}:{WeaponHp}:{target.VillainName}:{target.VillainHp}\n");
 
-            int weaponDamage= WeaponHp; 
-            target.VillainHp-= weaponDamage;
-            target.VillainHp = Math.Max(0, target.VillainHp); 
+            int weaponDamage = WeaponHp;
+            target.VillainHp -= weaponDamage;
+            target.VillainHp = Math.Max(0, target.VillainHp);
 
             Console.WriteLine($"{Weaponname} gör {weaponDamage} på {target.VillainHp}");
             Console.ReadKey();
         }
         Console.WriteLine($"YAy du räddade{SaveName}");
+    }
+
+    public virtual void Upgrade(int Money, int Hp)
+    {
+        
     }
 }

@@ -9,9 +9,11 @@ public class Caitlyn : Fightandhero
         Name = "Caitlyn";
         Weaponname = "Long Riffle";
         WeaponHp = 100;
+        SaveName = "Jayce";
+        
     }
 
-    static (int, int) CaitlynUppgrade(int Money, int Hp)
+    public override void Upgrade(int Money, int Hp)
     {
         Console.WriteLine($"Du har så här{Money} mycke pengar");
 
@@ -48,15 +50,16 @@ public class Caitlyn : Fightandhero
                 finalprice = ke * 100;
                 Hp *= 3;
             }
-            
+
             if (finalprice > Money)
             {
-            Console.WriteLine($"du har inte råd med {ke} uppgraderingar");
+                Console.WriteLine($"du har inte råd med {ke} uppgraderingar");
 
             }
         }
 
-        return (Money, Hp); 
+        Money -= finalprice; 
+        
     }
 
 }

@@ -5,18 +5,15 @@ public class Jinx:Villain
     public Jinx()
     {
         VillainName = "Jinx";
-        VillainHp = 400;
-        (VillainHp, Money) = Jinxuppgrade(Money, VillainHp); 
-      
+        VillainHp = 500;
     }
-        // uppgraderings metoden för Jinx Hit points
-       public static (int, int) Jinxuppgrade(int kr, int hp)
+
+    public override void Upgrade(int kr, int hp)
     {
-        
         Console.WriteLine("Välj vilken uppgradering");
-        Console.WriteLine("1. uppgradera hp gånger (5) 250kr");
+        Console.WriteLine("1. uppgradera hp gånger (2) 250kr");
         Console.WriteLine("2. uppgraderavhp gånger(10) 500kr");
-        Console.WriteLine("3. uppgraderavhp gånger(3) 100kr");
+        Console.WriteLine("3. uppgraderavhp gånger(5) 100kr");
 
         string wichuppgrade = "";
         int kostnad = 0;
@@ -50,7 +47,7 @@ public class Jinx:Villain
 
         kr -= kostnad;
 
-        return (kr, hp);
+      
     }
         
 }

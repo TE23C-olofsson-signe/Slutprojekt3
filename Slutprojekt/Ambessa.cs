@@ -6,9 +6,8 @@ public class Ambessa : Villain
     {
         VillainName = "Ambessa";
         VillainHp = 400;
-        (VillainHp, Money) = Ambessauppgrade(Money, VillainHp); 
     }
-    public static (int, int) Ambessauppgrade(int money, int Hp)
+    public override void Upgrade(int money, int Hp)
     {
         Console.WriteLine($" Du har så här {money} mycket pengar");
 
@@ -49,7 +48,6 @@ public class Ambessa : Villain
 
         money -= endprice; 
 
-        return (money, Hp);
     }
     
 }
