@@ -1,17 +1,22 @@
 ﻿using System.Data;
 using Slutprojekt;
-
+// Lista på vilken hero du kan få 
 Fightandhero hero = new();
 Villain villain = new();
 List<string> HeroNames = [];
 HeroNames.Add("Vi");
 HeroNames.Add("Caitlyn");
-foreach (var item in HeroNames)
-{
-    Console.WriteLine(item);
-}
+List<string> Villains = [];
+Villains.Add("Ambessa"); 
+Villains.Add("Jinx"); 
 
-Console.Write(""); 
+if (HeroNames.Count==Villains.Count)
+{
+    for (int i = 0; i < HeroNames.Count; i++)
+    {
+        Console.WriteLine($"{HeroNames.Count}:{Villains.Count}");
+    }
+}
 
 bool Flamingo = false;
 string Hero = "";
