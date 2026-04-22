@@ -4,26 +4,31 @@ using Slutprojekt;
 Fightandhero hero = new();
 Villain villain = new();
 List<string> HeroNames = [];
+
+
 HeroNames.Add("Vi");
 HeroNames.Add("Caitlyn");
 List<string> Villains = [];
 Villains.Add("Ambessa"); 
-Villains.Add("Jinx"); 
+Villains.Add("Jinx");
 
-if (HeroNames.Count==Villains.Count)
+foreach (var item in HeroNames)
 {
-    for (int i = 0; i < HeroNames.Count; i++)
-    {
-        Console.WriteLine($"{HeroNames.Count}:{Villains.Count}");
-    }
+    Console.WriteLine(item); 
+}
+foreach (var item in Villains)
+{
+    Console.WriteLine(item); 
 }
 
 bool Flamingo = false;
 string Hero = "";
+string Villan = ""; 
 while (!Flamingo)
 {
     Hero = Console.ReadLine();
-    if (HeroNames.Contains(Hero))
+    Villan = Console.ReadLine();
+    if (HeroNames.Contains(Hero)&& Villains.Contains(Villan))
     {
         Console.WriteLine($"Du är {Hero}");
         if (Hero == "Caitlyn")
@@ -32,7 +37,7 @@ while (!Flamingo)
             villain = new Jinx();
             Flamingo = true;
         }
-        else if (Hero == "Vi")
+        else if (Hero == "Vi"&& Villan== "Jinx")
         {
             hero = new Vi();
             villain = new Ambessa();
