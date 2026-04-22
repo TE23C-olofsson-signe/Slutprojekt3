@@ -10,11 +10,11 @@ public class Fightandhero
     public string Weaponname;
     public int WeaponHp;
     protected string SaveName;
-    protected int Money = 500;
+    public int Money;
 
 
     // Koden för attacken kan ändras i subklasser. 
-    protected void Attack(Villain target)
+    public void Attack(Villain target)
     {
         Console.WriteLine($"{Name} attackerar {target.VillainName} Med sitt vapen{Weaponname}");
 
@@ -33,7 +33,7 @@ public class Fightandhero
         Console.WriteLine($"Yay du slog{target.VillainName}");
     }
     //kode för saveattack. 
-    protected void saveattack(Villain target)
+    public void saveattack(Villain target)
     {
         Console.WriteLine($"{Name} attackerar {target.VillainName} Med sitt vapen{Weaponname}");
         while (target.VillainHp > 0)
@@ -51,8 +51,8 @@ public class Fightandhero
         Console.WriteLine($"YAy du räddade{SaveName}");
     }
 
-    public virtual void Upgrade(int Money, int Hp)
+    public virtual void Upgrade()
     {
-        
+    
     }
 }

@@ -10,10 +10,10 @@ public class Caitlyn : Fightandhero
         Weaponname = "Long Riffle";
         WeaponHp = 100;
         SaveName = "Jayce";
-        
+        Money = 500; 
     }
 
-    public override void Upgrade(int Money, int Hp)
+    public override void Upgrade()
     {
         Console.WriteLine($"Du har så här{Money} mycke pengar");
 
@@ -38,17 +38,17 @@ public class Caitlyn : Fightandhero
             if (uppgrade == "1")
             {
                 finalprice = ke * 300;
-                Hp *= 5;
+                WeaponHp *= 5;
             }
             else if (uppgrade == "2")
             {
                 finalprice = ke * 600;
-                Hp *= 10;
+                WeaponHp *= 10;
             }
             else if (uppgrade == "3")
             {
                 finalprice = ke * 100;
-                Hp *= 3;
+                WeaponHp *= 3;
             }
 
             if (finalprice > Money)

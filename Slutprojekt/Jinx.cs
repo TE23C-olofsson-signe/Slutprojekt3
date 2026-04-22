@@ -8,7 +8,7 @@ public class Jinx:Villain
         VillainHp = 500;
     }
 
-    public override void Upgrade(int kr, int hp)
+    public override void Upgrade()
     {
         Console.WriteLine("Välj vilken uppgradering");
         Console.WriteLine("1. uppgradera hp gånger (2) 250kr");
@@ -30,22 +30,22 @@ public class Jinx:Villain
             if (wichuppgrade == "1")
             {
                 kostnad = a * 250;
-                hp *= 5;
+                VillainHp *= 5;
             }
             else if (wichuppgrade == "2")
             {
                 kostnad = a * 500;
-                hp *= 10;
+                VillainHp *= 10;
             }
             else if (wichuppgrade == "3")
             {
                 kostnad = a * 100;
-                hp *= 3;
+                VillainHp *= 3;
             }
 
         }
 
-        kr -= kostnad;
+        Money -= kostnad;
 
       
     }

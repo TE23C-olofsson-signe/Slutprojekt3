@@ -7,7 +7,7 @@ public class Villain
   public int VillainHp;
   protected int Money = 500;
 
-  public virtual void Upgrade(int kr, int hp)
+  public virtual void Upgrade()
   {
 
   }

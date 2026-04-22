@@ -1,9 +1,10 @@
-﻿using Slutprojekt;
+﻿using System.Data;
+using Slutprojekt;
 
 Fightandhero hero = new();
 Villain villain = new();
 List<string> HeroNames = [];
-HeroNames.Add("VI");
+HeroNames.Add("Vi");
 HeroNames.Add("Caitlyn");
 foreach (var item in HeroNames)
 {
@@ -24,11 +25,13 @@ while (!Flamingo)
         {
             hero = new Caitlyn();
             villain = new Jinx();
+            Flamingo = true;
         }
         else if (Hero == "Vi")
         {
             hero = new Vi();
             villain = new Ambessa();
+            Flamingo = true;
         }
     }
     else
@@ -36,6 +39,15 @@ while (!Flamingo)
         Console.WriteLine("Skriv ett namn från listan");
     }
 }
+
+hero.Attack(villain);
+hero.Upgrade();
+
+villain.Upgrade();
+
+hero.saveattack(villain); 
+
+
 
 
 

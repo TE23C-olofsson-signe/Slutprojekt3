@@ -13,7 +13,7 @@ public class Vi : Fightandhero
     }
 
     // köp av Hp uppgradering. 
-    public override void Upgrade(int Money, int Hp)
+    public override void Upgrade()
     {
         Console.WriteLine($"Du har så här{Money} mycke pengar ");
 
@@ -40,15 +40,17 @@ public class Vi : Fightandhero
             if (uppgrade == "1")
             {
                 finalprice = p * 300;
-                Hp *= 5;
+                WeaponHp *= 2;
             }
             else if (uppgrade == "2")
             {
                 finalprice = p * 600;
+                WeaponHp *= 10;
             }
             else if (uppgrade == "3")
             {
                 finalprice = p * 100;
+                WeaponHp *= 5;
             }
 
             if (finalprice > Money)

@@ -7,9 +7,9 @@ public class Ambessa : Villain
         VillainName = "Ambessa";
         VillainHp = 400;
     }
-    public override void Upgrade(int money, int Hp)
+    public override void Upgrade()
     {
-        Console.WriteLine($" Du har så här {money} mycket pengar");
+        Console.WriteLine($" Du har så här {Money} mycket pengar");
 
         Console.WriteLine("Välj vilken uppgradering");
         Console.WriteLine("1. uppgraderavhp gånger (5) 250kr");
@@ -31,22 +31,22 @@ public class Ambessa : Villain
             if (Whichppgrade == "1")
             {
                 endprice = a * 250;
-                Hp *= 5;
+                VillainHp *= 5;
             }
             else if (Whichppgrade == "2")
             {
                 endprice = a * 500;
-                Hp *= 10;
+                VillainHp *= 10;
             }
             else if (Whichppgrade == "3")
             {
                 endprice = a * 100;
-                Hp *= 3;
+               VillainHp  *= 3;
             }
 
         }
 
-        money -= endprice; 
+        Money -= endprice; 
 
     }
     
