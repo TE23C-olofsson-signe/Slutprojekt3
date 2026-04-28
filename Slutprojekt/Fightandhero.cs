@@ -33,7 +33,7 @@ public class Fightandhero
         Console.WriteLine($"Yay du slog{target.VillainName}");
     }
     //kode för saveattack. 
-    public void saveattack(Villain target)
+    public void SaveAttack(Villain target)
     {
         Console.WriteLine($"{Name} attackerar {target.VillainName} Med sitt vapen{Weaponname}");
         while (target.VillainHp > 0)
